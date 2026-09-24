@@ -1,0 +1,31 @@
+{
+  "info": {
+    "name": "EventPlanner API Tests",
+    "_postman_id": "1234-5678-9012",
+    "description": "Collection de tests d'intégration pour EventPlanner",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"user_id\": 1, \"event_id\": 5 }"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/registrations",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "registrations"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

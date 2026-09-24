@@ -1,59 +1,354 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Event Planner — Full-Stack Web Engineering & Quality Engineering
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> A Laravel-based event management platform developed alongside a comprehensive **Software Quality Engineering** workflow covering automated testing, API validation, functional testing, security testing, traceability, and test reporting.
 
-## About Laravel
+## Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Event Planner** is a web application for managing events, users, categories, registrations, and administrative workflows.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The project goes beyond application development by integrating a structured **quality engineering lifecycle** covering test design, static analysis, code review, manual validation, automated testing, API integration testing, unit testing, Selenium end-to-end testing, traceability, and quality reporting.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The result is a complete engineering workflow spanning:
 
-## Learning Laravel
+**Development → Testing → Automation → Validation → Traceability → Quality Reporting**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Core Application
 
-## Laravel Sponsors
+The platform provides:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* 🔐 User authentication and registration
+* 👤 User profile management
+* 🛡️ Role-based administrative access
+* 📅 Event creation, modification, consultation, and deletion
+* 🏷️ Category management
+* 🎟️ Event registration
+* 👥 Registration and participant management
+* 🚫 Capacity and duplicate-registration validation
+* 🔒 Protected routes and unauthorized-access handling
+* 🗄️ Persistent relational data management
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Software Quality Engineering
 
-## Contributing
+A major part of the project focuses on validating the application across multiple testing levels.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Static Analysis & Code Review
 
-## Code of Conduct
+The project includes:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* Backend and frontend static analysis
+* Code review checklists
+* Identification and documentation of detected issues
+* Correction tracking
+* Code quality reports
 
-## Security Vulnerabilities
+### Functional Testing
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Functional test cases cover:
+
+* Authentication
+* User registration
+* Login and logout
+* Event management
+* Category management
+* User profiles
+* Event registration
+* Administration workflows
+
+### Security Testing
+
+Security-oriented scenarios include:
+
+* Unauthorized access attempts
+* Protected route validation
+* Role-based access control
+* Authentication validation
+
+### Non-Functional & System Testing
+
+The QA workflow also includes:
+
+* Non-functional test cases
+* System-level test scenarios
+* Capacity validation
+* Application behavior verification
+* Manual test execution and evidence collection
+
+---
+
+## Automated Testing
+
+The project combines multiple testing technologies to validate the application at different levels.
+
+### Unit Testing
+
+Validation of application components and business logic using:
+
+* PHPUnit
+* Python-based test modules
+
+### API & Integration Testing
+
+REST/API behavior is validated through automated integration tests covering scenarios such as:
+
+* Authentication
+* Event registration
+* API request/response behavior
+* Integration workflows
+
+An API collection is also included for structured API testing.
+
+### End-to-End Testing
+
+The application is tested through browser automation using:
+
+* Selenium
+* Python
+* Pytest
+* Page Object Model
+
+Automated scenarios reproduce realistic user workflows such as authentication and event-management interactions.
+
+---
+
+## Quality Engineering Workflow
+
+The project follows a layered validation strategy:
+
+```text
+                 Event Planner
+                       │
+          ┌────────────┴────────────┐
+          │                         │
+     Application                QA Process
+          │                         │
+   Laravel / PHP              Static Analysis
+          │                    Code Review
+          │                    Test Design
+          │                         │
+          │              ┌──────────┼──────────┐
+          │              │          │          │
+          │            Unit       API       E2E
+          │            Tests   Integration Selenium
+          │              │          │          │
+          └──────────────┴──────────┴──────────┘
+                       │
+                 Test Execution
+                       │
+                 Traceability
+                       │
+                 Quality Reports
+```
+
+---
+
+## Technology Stack
+
+### Backend
+
+* **PHP**
+* **Laravel**
+* **Eloquent ORM**
+* **REST APIs**
+* **MySQL**
+
+### Frontend
+
+* **Blade**
+* **JavaScript**
+* **Vite**
+* **Tailwind CSS / frontend tooling**
+
+### Testing & QA
+
+* **PHPUnit**
+* **Pytest**
+* **Selenium**
+* **API Integration Testing**
+* **Static Analysis**
+* **Manual Testing**
+* **Functional Testing**
+* **Non-Functional Testing**
+* **System Testing**
+* **Code Review**
+* **Test Traceability**
+
+### Development Tools
+
+* Composer
+* npm
+* Git
+* GitHub
+
+---
+
+## Architecture
+
+The application follows Laravel's MVC-oriented architecture:
+
+```text
+                    Client
+                      │
+                      ▼
+                  Web Routes
+                      │
+                      ▼
+                 Controllers
+                      │
+             ┌────────┴────────┐
+             ▼                 ▼
+          Services          Validation
+             │
+             ▼
+            Models
+             │
+             ▼
+          Database
+```
+
+The testing ecosystem complements the application architecture:
+
+```text
+Laravel Application
+        │
+        ├── PHPUnit
+        │
+        ├── API Integration Tests
+        │
+        ├── Pytest
+        │
+        └── Selenium E2E Tests
+                 │
+                 ▼
+          Test Evidence
+                 │
+                 ▼
+        Traceability & Reports
+```
+
+---
+
+## Test Coverage Areas
+
+| Area           | Validation                               |
+| -------------- | ---------------------------------------- |
+| Authentication | Login, registration, logout              |
+| Authorization  | Roles and protected routes               |
+| Users          | Profile consultation and modification    |
+| Events         | CRUD operations                          |
+| Categories     | Administration and management            |
+| Registrations  | Registration, capacity, duplicates       |
+| APIs           | Authentication and registration flows    |
+| Security       | Unauthorized access and route protection |
+| UI             | Selenium end-to-end workflows            |
+| Code Quality   | Static analysis and code review          |
+| System         | Functional and non-functional scenarios  |
+| Traceability   | Requirements → Tests → Results           |
+
+---
+
+## Quality Deliverables
+
+The repository contains supporting QA artifacts including:
+
+* Functional test specifications
+* Non-functional test specifications
+* System test specifications
+* Manual execution reports
+* Automated test reports
+* Code review documentation
+* Static analysis reports
+* Defect/problem tracking
+* Correction documentation
+* API integration collections
+* Selenium test scenarios
+* Test traceability matrices
+* Test evidence and screenshots
+* Final testing report
+
+This makes the project not only a web application, but also a **documented software quality engineering case study**.
+
+---
+
+## Repository Structure
+
+```text
+EventPlanner/
+│
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+├── routes/
+├── tests/
+│
+├── EventPlanner_Test_Qualite/
+│   ├── Tests_Statiques/
+│   ├── Cas_de_Test/
+│   ├── Tests_Automatises/
+│   ├── Resultats/
+│   ├── Tracabilite/
+│   └── Rapport_Final/
+│
+├── artisan
+├── composer.json
+├── package.json
+├── phpunit.xml
+└── README.md
+```
+
+---
+
+## Engineering Perspective
+
+This project demonstrates experience across several complementary areas of software engineering:
+
+**Full-Stack Development**
+→ Laravel, PHP, MVC, database-driven applications
+
+**Backend & API Engineering**
+→ REST APIs, authentication, business logic, integration testing
+
+**Software Quality Engineering**
+→ Test strategy, automated testing, static analysis, traceability
+
+**Automation**
+→ Python, Pytest, Selenium, API test automation
+
+**Security**
+→ Authentication, authorization, protected routes, access-control testing
+
+**Engineering Methodology**
+→ Code review, defect tracking, test evidence, structured reporting
+
+These foundations are directly transferable to larger **AI, data, cloud, and distributed software systems**, where reliability, automation, API quality, security, and observability are essential.
+
+---
+
+## Project Status
+
+**Completed academic software engineering and quality engineering project.**
+
+The repository contains both the Laravel application and the associated testing/quality artifacts developed throughout the project lifecycle.
+
+---
+
+## Author
+
+**Erij Kacem**
+
+Computer Engineering Student
+Software Engineering · Artificial Intelligence · Data & Cloud Systems
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project was developed for academic and educational purposes.
+
+The source code is shared for learning, research, and portfolio demonstration. Third-party libraries, datasets, documentation, and other external materials remain subject to their respective licenses.
